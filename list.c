@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/15 15:16:27 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/15 16:36:14 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/06/16 17:28:45 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ t_node *newnode(void *str)
 	newnode = malloc(sizeof(t_node));
 	if (!newnode)
 		return (NULL);
-	//newnode->value = atoi? julius zei dat je eigen version moet maken
-	newnode->index = 0;
+	newnode->value = atoi(str);
+	newnode->position = -1;
 	newnode->previous = NULL;
 	newnode->next = NULL;
 	return (newnode);
 }
+
 /* returns last node of the list */
 t_node *lst_last(t_node *lst)
 {

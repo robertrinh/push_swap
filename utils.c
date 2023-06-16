@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   utils.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/16 17:17:30 by qtrinh        ########   odam.nl         */
+/*   Created: 2023/06/16 16:07:07 by qtrinh        #+#    #+#                 */
+/*   Updated: 2023/06/16 17:23:38 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	terminator(void)
 {
-	t_node	*a;
-	t_node	*b;
-
-	a = NULL;
-	b = NULL;
-	if (argc == 1)
-		return (EXIT_SUCCES);
-	
+	ft_putchar_fd("Error\n", 1);
+	exit(EXIT_FAILURE);
 }
 
-/* stappenplan:
-1. build stacks
-2. build actions
-3. hardcore 2/3 digits
-4. get the sorting algorithm */
+long	ft_ayetoi(const char *str)
+{
+	long int	i;
+	long int	result;
+	long int	neg;
+
+	result = 0;
+	i = 0;
+	neg = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-')
+	{
+		neg *= -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		result = result * 10 + str[i] - '0';
+		i++;
+	}
+	return (neg * result);
+}
