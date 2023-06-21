@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 16:07:07 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/16 17:23:38 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/06/21 17:31:27 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	terminator(void)
 {
-	ft_putchar_fd("Error\n", 1);
+	ft_putstr_fd("Error\n", 1);
 	exit(EXIT_FAILURE);
 }
 

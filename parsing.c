@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 15:18:25 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/16 17:30:09 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/06/21 18:08:05 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	digit_check(char *number)
 	return (1);
 }
 
-int	input_check(char **str, t_node *a)
+int	input_check(char **str, t_node **a)
 {
 	t_node *new;
 	int	i;
@@ -45,9 +45,11 @@ int	input_check(char **str, t_node *a)
 	{
 		if(!digit_check(str[i]))
 			terminator();
-		//add the numbers to a new node?
+		new = newnode(str[i]);//add the numbers to a new node?
+		ft_lstadd_back(a, new);
 		i++;
 	}
+	return (0);
 }
 
 //use bool data type for checks?

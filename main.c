@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/16 17:17:30 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/06/21 17:22:42 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1)
-		return (EXIT_SUCCES);
-	
+		return (0); //exit_succes needs stdlib.h
+	digit_check(*argv);
+	return (0);
 }
 
 /* stappenplan:

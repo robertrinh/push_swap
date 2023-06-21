@@ -6,7 +6,7 @@
 #    By: qtrinh <qtrinh@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/06/14 16:16:14 by qtrinh        #+#    #+#                  #
-#    Updated: 2023/06/14 17:11:57 by qtrinh        ########   odam.nl          #
+#    Updated: 2023/06/21 17:22:23 by qtrinh        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,10 @@ NAME := push_swap
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra -g #gflag for debug
 
-SRCS := push_swap.c \
+SRCS := main.c \
+		list.c \
+		parsing.c \
+		utils.c \
 
 OBJ := $(SRCS: .c=.o)
 

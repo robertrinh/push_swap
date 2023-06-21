@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/15 15:16:27 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/16 17:28:45 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/06/21 17:29:32 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_node *newnode(void *str)
 	newnode = malloc(sizeof(t_node));
 	if (!newnode)
 		return (NULL);
-	newnode->value = atoi(str);
+	newnode->value = ft_ayetoi(str);
 	newnode->position = -1;
 	newnode->previous = NULL;
 	newnode->next = NULL;
@@ -48,10 +48,7 @@ void	*lst_add_back(t_node **lst, t_node *new)
 	
 	temp = *lst;
 	if (!(*lst))
-	{
 		*lst = new;
-		return ;
-	}
 	else
 		temp = lst_last(*lst);
 		temp->next = new;
