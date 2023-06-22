@@ -6,20 +6,20 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/15 15:16:27 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/21 17:29:32 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/06/22 17:35:53 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *newnode(void *str)
+t_node *newnode(int value)
 {
 	t_node	*newnode;
 
 	newnode = malloc(sizeof(t_node));
 	if (!newnode)
 		return (NULL);
-	newnode->value = ft_ayetoi(str);
+	newnode->value = value;
 	newnode->position = -1;
 	newnode->previous = NULL;
 	newnode->next = NULL;
@@ -36,13 +36,13 @@ t_node *lst_last(t_node *lst)
 	return (lst);
 }
 /* adds node ''new'' at beginning of the list */
-void	*lst_add_front(t_node **lst, t_node *new)
+void	lst_add_front(t_node **lst, t_node *new)
 {
 	new->next = *lst;
 	*lst = new;
 }
 /* returns last node of the list */
-void	*lst_add_back(t_node **lst, t_node *new)
+void	lst_add_back(t_node **lst, t_node *new)
 {
 	t_node *temp;
 	
