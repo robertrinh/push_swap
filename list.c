@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/15 15:16:27 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/22 17:35:53 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/06/23 15:05:01 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_node *newnode(int value)
 		return (NULL);
 	newnode->value = value;
 	newnode->position = -1;
-	newnode->previous = NULL;
+	// newnode->previous = NULL; nodig?
 	newnode->next = NULL;
 	return (newnode);
 }

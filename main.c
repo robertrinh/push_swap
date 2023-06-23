@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/22 17:45:21 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/06/23 15:22:22 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@
 int	main(int argc, char **argv)
 {
 	const int	argv1 = 1;
+	t_node	*a;
+	t_node	*b;
 
 	if (argc == 1)
-	{
-		printf("only argv1");
-		return (0);
-	}
-	//	return (0); //exit_succes needs stdlib.h
-	if (argc == 2 && !input_check(argv, argv1))
-		terminator(); //als er geen input bij argv1. terminate
-	//else
-		//stacka_init
-	return (0);
+		return (0); //exit_succes needs stdlib.h
+	input_check(argc, argv, argv1);
+	if (!duplicate_check(argv, argv1)) //correct syntax regarding false bool?
+		terminator();
+	//a = stacka_init(argv, argv1);
+	b = NULL; 
+	return (0);	
 }
 
 	// t_node	*a;
