@@ -6,22 +6,21 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/15 15:16:27 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/23 15:05:01 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/12 15:05:13 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *newnode(int value)
+t_node *new_node(int value)
 {
 	t_node	*newnode;
 
-	newnode = malloc(sizeof(t_node));
+	newnode = ft_calloc(1, sizeof(t_node));
 	if (!newnode)
 		return (NULL);
 	newnode->value = value;
-	newnode->position = -1;
-	// newnode->previous = NULL; nodig?
+	newnode->position = 0;
 	newnode->next = NULL;
 	return (newnode);
 }

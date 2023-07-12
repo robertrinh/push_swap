@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/23 15:22:22 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/12 16:10:13 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@
 int	main(int argc, char **argv)
 {
 	const int	argv1 = 1;
-	t_node	*a;
-	t_node	*b;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
 	if (argc == 1)
 		return (0); //exit_succes needs stdlib.h
 	input_check(argc, argv, argv1);
-	if (!duplicate_check(argv, argv1)) //correct syntax regarding false bool?
-		terminator();
-	//a = stacka_init(argv, argv1);
-	b = NULL; 
+	stack_a = stacka_init(argc, argv, argv1);
+	stack_b = NULL;
 	return (0);	
 }
 

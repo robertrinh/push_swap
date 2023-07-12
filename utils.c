@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 16:07:07 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/06/23 13:16:42 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/12 15:19:04 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	terminator(void)
 {
-	ft_putendl_fd("Error", 2);
+	ft_putendl_fd("Error", STDERR_FILENO);
 	exit(EXIT_FAILURE);
 }
 
@@ -41,3 +41,4 @@ long	ft_ayetoi(const char *str)
 	}
 	return (neg * result);
 }
+
