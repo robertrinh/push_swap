@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 16:07:07 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/12 15:19:04 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/14 14:19:07 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,3 @@ long	ft_ayetoi(const char *str)
 	}
 	return (neg * result);
 }
-

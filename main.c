@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/12 16:10:13 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/14 14:46:19 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 int	main(int argc, char **argv)
 {
-	const int	argv1 = 1;
 	t_node	*stack_a;
 	t_node	*stack_b;
 
 	if (argc == 1)
 		return (0); //exit_succes needs stdlib.h
-	input_check(argc, argv, argv1);
-	stack_a = stacka_init(argc, argv, argv1);
+	input_check(argc, argv);
+	stack_a = stacka_init(argc, argv);
 	stack_b = NULL;
 	return (0);	
 }
