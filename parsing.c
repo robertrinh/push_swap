@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 15:18:25 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/14 15:19:50 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/20 13:34:16 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static bool	number_check(char *argv)
 	{
 		if (!ft_isdigit(argv[i]))
 		{
-			printf("komt ie heir ofniet");
+			printf("digit check has failed aka ERROR \n");
 			return (false);
 		}
 		i++;
