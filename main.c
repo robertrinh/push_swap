@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/14 14:46:19 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/21 16:25:21 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,14 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 
 	if (argc == 1)
-		return (0); //exit_succes needs stdlib.h
+		return (0);
 	input_check(argc, argv);
 	stack_a = stacka_init(argc, argv);
 	stack_b = NULL;
+	//set the index for the stacks (in a, and also check how many nodes there are)
+	//implement an ''is sorted''
+	//sort the stuff
+	//free afterwards?
 	return (0);	
 }
 

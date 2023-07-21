@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 15:18:25 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/20 13:34:16 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/21 15:49:36 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,19 @@
 #include <limits.h>
 #include <stdio.h> //delete afterwards
 
-static bool	duplicate_check(char **argv)
+static bool	duplicate_check(char **temp_array)
 {
 	int	i;
 	int	j;
-
-	//change up the function OR
-	//check duplicates nadat je nodes hebt gelinked --> in de vorm van struct links
-	// int len;
-	i = 1;
-	j = 0;
-	// printf("j value of argv is %c \n", argv[i][j]);
-	while (argv[i] && argv[i][j])
+	
+	i = 0;
+	while (temp_array[i])
 	{
 		j = i + 1;
-		// printf("value of i is: %s \n", argv[i]);
-		// printf("value of j = %d \n", j);
-		while (argv[j])
+		while (temp_array[j])
 		{
-			if (j == i)
-				j++;
-			if (ft_ayetoi(argv[i]) == ft_ayetoi(argv[j]))
-			{
-				printf("does it come here? dupes??\n");
-				return (true);
-			}
+			if (ft_ayetoi(temp_array[i]) == ft_ayetoi(temp_array[j]))
+				return(true);
 			j++;
 		}
 		i++;
@@ -53,18 +41,14 @@ static bool	number_check(char *argv)
 	i = 0;
 	if (argv[i] == '-')
 		i++;
-	printf("argv[i] in number check is %c \n", argv[i]);
+	//check nog alleen de minus only?
 	while (argv[i])
 	{
 		if (!ft_isdigit(argv[i]))
-		{
-			printf("digit check has failed aka ERROR \n");
 			return (false);
-		}
 		i++;
 	}
 	return (true);
-	//letters komen neit hier want atoi geeft 0 aan bij een letter?
 }
 
 void	input_check(int argc, char **argv)

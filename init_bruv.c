@@ -6,13 +6,37 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/22 17:36:59 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/14 15:31:09 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/21 17:05:08 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // make an index function
+void	index_plus(int value, t_node **stack_a)
+{
+	t_node	*temp;
+	
+	temp = *stack_a;
+	while (temp)
+	{
+		if (temp->value > value)
+			temp->position++;
+		temp = temp->next;
+	}
+}
+void	list_index(t_node **stack_a)
+{
+	t_node	*temp;
+	
+	temp = *stack_a;
+	while (temp)
+	{
+		index_plus(temp->value, stack_a);
+		temp = temp->next;
+	}
+	//deze checken nog! does index really hold true?
+}
 
 t_node	*stacka_init(int argc, char **argv)
 {

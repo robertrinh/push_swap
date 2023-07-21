@@ -6,7 +6,7 @@
 #    By: qtrinh <qtrinh@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/06/14 16:16:14 by qtrinh        #+#    #+#                  #
-#    Updated: 2023/07/12 15:24:16 by qtrinh        ########   odam.nl          #
+#    Updated: 2023/07/21 14:55:26 by qtrinh        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,10 @@ SRCS := main.c \
 		parsing.c \
 		utils.c \
 		init_bruv.c \
+		push.c \
+		reverse_rotate.c \
+		rotate.c \
+		swap.c \
 
 OBJ := $(SRCS: .c=.o)
 

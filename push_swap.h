@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:19 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/14 15:30:31 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/21 16:49:52 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_node
 int	main(int argc, char **argv);
 void	terminator(void);
 void	input_check(int argc, char **argv);
-// bool	duplicate_check(char **argv);
 long	ft_ayetoi(const char *str);
 t_node	*stacka_init(int argc, char **argv);
 
