@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:19 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/21 16:49:52 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/28 13:44:13 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	terminator(void);
 void	input_check(int argc, char **argv);
 long	ft_ayetoi(const char *str);
 t_node	*stacka_init(int argc, char **argv);
+void	stack_index(t_node **stack_a);
 
 /* linked list */
 t_node *new_node(int value);
@@ -40,5 +41,7 @@ void	lst_add_front(t_node **lst, t_node *new);
 void	lst_add_back(t_node **lst, t_node *new);
 int	lst_len(t_node *lst);
 void	add_lst_at_end(t_node **lst, int value);
+
+void print_stack(t_node *stack_a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 15:18:25 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/21 15:49:36 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/28 13:16:12 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,7 @@ void	input_check(int argc, char **argv)
 
 	i = 0;
 	if (argc == 2)
-	{	
-		printf("argv[1] is %s \n", argv[1]);
 		temp_array = ft_split(argv[1], ' ');
-	}
 	else
 		temp_array = argv + 1;
 	while (temp_array[i])

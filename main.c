@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/07/21 16:25:21 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/07/28 13:58:08 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ int	main(int argc, char **argv)
 	input_check(argc, argv);
 	stack_a = stacka_init(argc, argv);
 	stack_b = NULL;
+	stack_index(&stack_a);
+	sort(&stack_a, &stack_b);
+	// print_stack(stack_a);
 	//set the index for the stacks (in a, and also check how many nodes there are)
 	//implement an ''is sorted''
 	//sort the stuff
@@ -30,11 +33,21 @@ int	main(int argc, char **argv)
 	return (0);	
 }
 
+void print_stack(t_node *stack)
+{
+    while (stack)
+    {
+        printf("%d (position = %d) -> ", stack->value, stack->position);
+        stack = stack->next;
+    }
+    printf("NULL\n");
+}
+
 	// t_node	*a;
 	// t_node	*b;
 
 	// a = NULL;
-	// b = NULL; //stack creation in andere functie zetten?
+	// b = NULL; //stack_a creation in andere functie zetten?
 //digit check via bool? want je checkt gewoon true or false als je naar digit kijkt
 // aangezien we heletijd first argument van argv gebruiken om input te checken -> make it a const int? can't change value
 
