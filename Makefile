@@ -6,7 +6,7 @@
 #    By: qtrinh <qtrinh@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/06/14 16:16:14 by qtrinh        #+#    #+#                  #
-#    Updated: 2023/07/21 14:55:26 by qtrinh        ########   odam.nl          #
+#    Updated: 2023/08/04 16:37:16 by qtrinh        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,23 @@ NAME := push_swap
 
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra -g #gflag for debug
+HEADER := include/push_swap.h
+INCLUDE := -I include
+OBJDIR = objects
 
-SRCS := main.c \
+SRC := init_bruv.c \
 		list.c \
+		main.c \
 		parsing.c \
-		utils.c \
-		init_bruv.c \
 		push.c \
 		reverse_rotate.c \
 		rotate.c \
+		sort_small.c \
 		swap.c \
-
-OBJ := $(SRCS: .c=.o)
+		utils.c \
+		
+vpath %.c	src
+OBJ = $(patsubst %.c, $(OBJDIR)/%.o, $(SRC))
 
 #COLORS SHOW
 BOLD_GREEN=\033[1;92m
@@ -40,22 +45,24 @@ END_COLOUR=\033[0m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@cd libft && (MAKE)
+	@cd libft && $(MAKE)
 	@$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o $(NAME)
 	@echo "${RED}compiling? ${BOLD_GREEN}completed it mate ${END_COLOUR}"
 
-%.o: %.C
-	@echo "${RED} PUSHIN' $< ${END_COLOUR}"
-	@$(CC) -c ${CFLAGS} $< -o $@
+$(OBJDIR)/%.o: %.c $(HEADER)
+	@mkdir -p $(OBJDIR)
+	@echo "${RED} assembling ${GRAY}to push n swap..${INTENSE_CYAN}$<${YELLOW}ccccc ${END_COLOUR}"
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
+	@rm -rf $(OBJDIR)
 	@$(MAKE) clean -C ./libft
 
 fclean: clean
 	@rm -f $(NAME)
 	@$(MAKE) fclean -C ./libft
-	@echo "${INTENSE_CYAN}PUSHIN! ${END_COLOUR}"
+	@echo "${BOLD_GREEN}ya done swapping and pushin lad? ${END_COLOUR}"
 
 re: fclean all
 
