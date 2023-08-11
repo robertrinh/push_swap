@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/22 17:36:59 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/04 17:24:57 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/11 13:32:12 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_node	*stacka_init(int argc, char **argv)
 	i = 0;
 	stack_a = NULL;
 	if (argc == 2)
-		temp = ft_split(argv[i], ' ');
+		temp = ft_split(argv[1], ' ');
 	else
 	{
 		i++;

@@ -6,7 +6,7 @@
 #    By: qtrinh <qtrinh@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/06/14 16:16:14 by qtrinh        #+#    #+#                  #
-#    Updated: 2023/08/04 16:37:16 by qtrinh        ########   odam.nl          #
+#    Updated: 2023/08/11 16:08:02 by robertrinh    ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC := init_bruv.c \
 		push.c \
 		reverse_rotate.c \
 		rotate.c \
-		sort_small.c \
+		sort.c \
 		swap.c \
 		utils.c \
 		
