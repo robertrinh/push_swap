@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/11 15:32:34 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/14 21:49:12 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void print_stack(t_node *stack) {
     t_node *current = stack;
     while (current != NULL) {
-        printf("Position: %d, Value: %d BEFORE SORT\n", current->position, current->value);
+        printf("Position: %d, Value: %d\n", current->position, current->value);
         current = current->next;
     }
 }
@@ -40,13 +40,10 @@ int	main(int argc, char **argv)
 	input_check(argc, argv);
 	stack_a = stacka_init(argc, argv);
 	stack_b = NULL;
-	// stack_index(&stack_a);
 	sort(&stack_a, &stack_b);
 	new_print(stack_a);
-	//set the index for the stacks (in a, and also check how many nodes there are)
-	//implement an ''is sorted''
-	//sort the stuff
-	//free afterwards?
+	free_nodes(&stack_a);
+	free_nodes(&stack_b);
 	return (0);	
 }
 	// t_node	*a;

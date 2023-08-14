@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:19 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/11 16:08:11 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/14 22:23:54 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ t_node	*stacka_init(int argc, char **argv);
 void	stack_index(t_node **stack);
 bool	already_sorted(t_node **stack_a);
 void	sort(t_node **stack_a, t_node **stack_b);
-void	free_nodes(t_node *node);
+void	free_nodes(t_node **node);
+int	find_biggest_index(t_node **stack_a);
+int	find_lowest_index(t_node **stack_a);
 
 /* linked list */
 t_node	*new_node(int value);
@@ -46,7 +48,7 @@ int	lst_len(t_node *lst);
 void	add_lst_at_end(t_node **lst, int value);
 
 /* actions */
-void	pa(t_node **stack_a, t_node **stack_b);
+void	pa(t_node **stack_b, t_node **stack_a);
 void	pb(t_node **stack_a, t_node **stack_b);
 void	ra(t_node **stack_a);
 void	rb(t_node **stack_b);

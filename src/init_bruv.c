@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/22 17:36:59 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/11 13:32:12 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/14 16:05:48 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ t_node	*stacka_init(int argc, char **argv)
 	}
 	while (temp[i])
 	{
-		//initialise node + assign node at back
 		add_lst_at_end(&stack_a, ft_ayetoi(temp[i]));
+		//initialise node + assign node at back
 		// printf("nodes made are %d node(s) \n", lst_len(stack_a));
 		i++;
 	}
