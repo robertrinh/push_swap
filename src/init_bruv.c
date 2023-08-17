@@ -6,12 +6,11 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/22 17:36:59 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:25:30 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 17:02:09 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> //delete afterwards
 
 void	stack_index(t_node **stack)
 {
@@ -36,8 +35,8 @@ void	stack_index(t_node **stack)
 t_node	*stacka_init(int argc, char **argv)
 {
 	t_node	*stack_a;
-	int	i;
-	char **temp;
+	int		i;
+	char	**temp;
 
 	i = 0;
 	stack_a = NULL;

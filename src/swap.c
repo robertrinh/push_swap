@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/14 15:38:30 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:52:48 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 17:03:06 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,23 @@ static void	swap(t_node **stack)
 	*stack = temp; //Update the stack pointer to point to the second node
 }
 
+/* Swap the first 2 elements at the top of stack a.
+Do nothing if there is only one or no elements. */
 void	sa(t_node **stack_a)
 {
 	swap(stack_a);
 	ft_putstr_fd("sa\n", 1);
 }
 
+/* Swap the first 2 elements at the top of stack b.
+Do nothing if there is only one or no elements. */
 void	sb(t_node **stack_b)
 {
 	swap(stack_b);
 	ft_putstr_fd("sb\n", 1);
 }
+
+/* sa and sb at the same time */
 void	ss(t_node **stack_a, t_node **stack_b)
 {
 	swap(stack_a);

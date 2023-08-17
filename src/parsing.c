@@ -6,19 +6,18 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 15:18:25 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:27:52 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 16:10:46 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
-#include <stdio.h> //delete afterwards
 
 static bool	duplicate_check(char **temp_array)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	while (temp_array[i])
 	{
@@ -26,7 +25,7 @@ static bool	duplicate_check(char **temp_array)
 		while (temp_array[j])
 		{
 			if (ft_ayetoi(temp_array[i]) == ft_ayetoi(temp_array[j]))
-				return(true);
+				return (true);
 			j++;
 		}
 		i++;
@@ -43,7 +42,6 @@ static bool	number_check(char *argv)
 		i++;
 	if (argv[i] == '\0')
 		terminator();
-	//check nog alleen de minus only?
 	while (argv[i])
 	{
 		if (!ft_isdigit(argv[i]))

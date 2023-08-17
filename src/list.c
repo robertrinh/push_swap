@@ -6,14 +6,14 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/15 15:16:27 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:57:43 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 16:09:02 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* initialises a new node */
-t_node *new_node(int value)
+t_node	*new_node(int value)
 {
 	t_node	*newnode;
 
@@ -27,7 +27,7 @@ t_node *new_node(int value)
 }
 
 /* returns last node of the list */
-t_node *lst_last(t_node *lst)
+t_node	*lst_last(t_node *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -39,8 +39,8 @@ t_node *lst_last(t_node *lst)
 /* adds node at the end of the linked list */
 void	add_lst_at_end(t_node **lst, int value)
 {
-	t_node *new;
-	t_node *current;
+	t_node	*new;
+	t_node	*current;
 
 	if (*lst == NULL)
 	{
@@ -53,6 +53,7 @@ void	add_lst_at_end(t_node **lst, int value)
 	new = new_node(value);
 	current->next = new;
 }
+
 /* counts number of nodes in list */
 int	lst_len(t_node *lst)
 {

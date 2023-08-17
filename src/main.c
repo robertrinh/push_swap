@@ -6,12 +6,12 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:57:52 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 17:09:20 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> //delete afterwards
+#include <stdio.h> //delete
 
 void	leak_check(void)
 {
@@ -45,16 +45,16 @@ int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-	
-	atexit(&leak_check); //delete afterwards
+
 	if (argc == 1)
 		return (0);
 	input_check(argc, argv);
 	stack_a = stacka_init(argc, argv);
 	stack_b = NULL;
 	sort(&stack_a, &stack_b);
-	// new_print(stack_a); //delete afterwards
 	free_node(&stack_a);
 	free_node(&stack_b);
+	new_print(stack_a);
+	// atexit(&leak_check);
 	return (0);
 }

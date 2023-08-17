@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 16:07:07 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 16:00:17 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 16:18:24 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ bool	already_sorted(t_node **stack_a)
 	}
 	return (true);
 }
+
 int	find_lowest_index(t_node **stack_a)
 {
 	int		lowest_index;
@@ -46,6 +47,7 @@ int	find_lowest_index(t_node **stack_a)
 	}
 	return (lowest_index);
 }
+
 void	free_node(t_node **node)
 {
 	t_node	*temp;

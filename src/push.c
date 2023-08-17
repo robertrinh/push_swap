@@ -6,15 +6,16 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/20 14:31:54 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:51:42 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 17:03:17 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 /**
- * @brief Take first element at top of first stack, put it at top of receiving stack. Do nothing if other stack is empty.
+ * @brief Take first element at top of first stack, 
+ * put it at top of receiving stack. 
+ * Do nothing if other stack is empty.
  * @param stack_send the stack to send to
  * @param stack_receive stack to receive
 */
@@ -34,13 +35,15 @@ void	push(t_node **stack_send, t_node **stack_receive)
 		*stack_receive = temp; //update top of stack 2 to temp node
 	}
 }
+
 /* Take the first element at the top of b and put it at the top of a.
 Do nothing if b is empty. */
 void	pa(t_node **stack_b, t_node **stack_a)
 {
-	push(stack_b, stack_a);	
+	push(stack_b, stack_a);
 	ft_putstr_fd("pa\n", 1);
 }
+
 /* Take the first element at the top of a and put it at the top of b.
 Do nothing if a is empty */
 void	pb(t_node **stack_a, t_node **stack_b)

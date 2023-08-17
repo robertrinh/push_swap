@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/20 16:48:38 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:59:25 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 17:02:43 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 */
 static void	reverse_rotate(t_node **stack)
 {
-	t_node *current;
-	t_node *tail;
+	t_node	*current;
+	t_node	*tail;
 	
 	if (!*stack || !(*stack)->next)
 		return ;
@@ -35,6 +35,7 @@ static void	reverse_rotate(t_node **stack)
 	*stack = current; //assigns stack to last node
 	tail->next = NULL; //assigns new tail
 }
+
 /* Shift down all elements of stack a by 1.
 The last element becomes the first one */
 void	rra(t_node **stack_a)
@@ -42,6 +43,7 @@ void	rra(t_node **stack_a)
 	reverse_rotate(stack_a);
 	ft_putstr_fd("rra\n", 1);
 }
+
 /* Shift down all elements of stack b by 1.
 The last element becomes the first one */
 void	rrb(t_node **stack_b)
@@ -49,6 +51,7 @@ void	rrb(t_node **stack_b)
 	reverse_rotate(stack_b);
 	ft_putstr_fd("rrb\n", 1);
 }
+
 /* rra and rrb at the same time */
 void	rrr(t_node **stack_a, t_node **stack_b)
 {

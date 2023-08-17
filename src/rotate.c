@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/14 15:37:01 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:51:40 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 17:02:55 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ra(t_node **stack_a)
 	rotate(stack_a);
 	ft_putstr_fd("ra\n", 1);
 }
+
 /* Shift up all elements of stack b by 1.
 The first element becomes the last one */
 void	rb(t_node **stack_b)
@@ -46,6 +47,7 @@ void	rb(t_node **stack_b)
 	rotate(stack_b);
 	ft_putstr_fd("rb\n", 1);
 }
+
 /* execute ra and b at the same time */
 void	rr(t_node **stack_a, t_node **stack_b)
 {

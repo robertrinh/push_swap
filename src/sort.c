@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/21 14:57:37 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 15:54:38 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 16:16:14 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,31 @@ void	sort_3(t_node **stack_a)
 	int	first;
 	int	middle;
 	int	last;
+
 	first = (*stack_a)->position;
 	middle = (*stack_a)->next->position;
 	last = lst_last(*stack_a)->position;
 	if (first > middle && first < last)
 		sa(stack_a);
-	else if (first > last && first < middle) //2 3 1
+	else if (first > last && first < middle)
 		rra(stack_a);
-	else if (last > middle && first > last) //3 1 2
+	else if (last > middle && first > last)
 		ra(stack_a);
-	else if (middle > last && first > middle) //3 2 1
+	else if (middle > last && first > middle)
 	{
 		sa(stack_a);
 		rra(stack_a);
 	}
-	else if (first < middle && first < last) //1 3 2
+	else if (first < middle && first < last)
 	{
 		rra(stack_a);
 		sa(stack_a);
 	}
 }
+
 void	sort_4(t_node **stack_a, t_node **stack_b)
 {
-	int	lowest;
+	int		lowest;
 	t_node	*temp;
 
 	temp = *stack_a;
@@ -62,10 +64,10 @@ void	sort_4(t_node **stack_a, t_node **stack_b)
 	{
 		while ((*stack_a)->position != lowest)
 			ra(stack_a);
+	}
 	pb(stack_a, stack_b);
 	sort_3(stack_a);
 	pa(stack_b, stack_a);
-	}
 }
 
 void	sort_5(t_node **stack_a, t_node **stack_b)
@@ -84,6 +86,7 @@ void	sort_5(t_node **stack_a, t_node **stack_b)
 	sort_4(stack_a, stack_b);
 	pa(stack_b, stack_a);
 }
+
 /**
  * @brief sorts the numbers in an ascending order through an algorithm.
  * @param stack_a stack a that is used to sort
