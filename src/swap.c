@@ -6,14 +6,17 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/14 15:38:30 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/02 15:42:48 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 15:52:48 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*  Swap the first 2 elements at the top of stack.
-Do nothing if there is only one or no elements.*/
+/**
+ * @brief  Swap the first 2 elements at the top of stack.
+ * Do nothing if there is only one or no elements.
+ * @param stack stack used to swap.
+*/
 static void	swap(t_node **stack)
 {
 	t_node	*temp;
@@ -25,6 +28,7 @@ static void	swap(t_node **stack)
 	temp->next = *stack; //set next pointer of second node to first node
 	*stack = temp; //Update the stack pointer to point to the second node
 }
+
 void	sa(t_node **stack_a)
 {
 	swap(stack_a);

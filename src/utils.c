@@ -6,12 +6,11 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 16:07:07 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 14:12:38 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/17 16:00:17 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	terminator(void)
 {
@@ -34,8 +33,8 @@ bool	already_sorted(t_node **stack_a)
 }
 int	find_lowest_index(t_node **stack_a)
 {
-	int	lowest_index;
-	t_node *node;
+	int		lowest_index;
+	t_node	*node;
 
 	lowest_index = 0;
 	node = *stack_a;
@@ -50,19 +49,12 @@ int	find_lowest_index(t_node **stack_a)
 void	free_node(t_node **node)
 {
 	t_node	*temp;
-	t_node	*next;
 
-	if (!node)
-		return ;
-	temp = *node;
-	while (temp->next)
+	while (*node)
 	{
-		// temp = *node;
-		next = temp;
+		temp = *node;
+		*node = (*node)->next;
 		if (temp)
-			free(temp);
-		temp = next;
+			free (temp);
 	}
-	if (temp)
-		free(temp);
 }

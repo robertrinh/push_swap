@@ -6,19 +6,23 @@
 /*   By: robertrinh <robertrinh@student.codam.nl      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/08/16 16:44:56 by robertrinh    #+#    #+#                 */
-/*   Updated: 2023/08/16 23:13:25 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/17 15:56:06 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * @brief sorting algorithm that uses bitshifting to sort high amount of numbers
+ * @param stack_a stack a used to sort
+ * @param stack_b stack b used to push
+*/
 void	radix_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	bit;
 	int	len;
-	
+
 	bit = 1;
-	// print_stack(*stack_a); //delete
 	while (!already_sorted(stack_a))
 	{
 		len = lst_len(*stack_a);

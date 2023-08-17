@@ -6,14 +6,17 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/14 15:37:01 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/02 14:28:22 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/17 15:51:40 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Shift up all elements of a stack by 1.
-The first element becomes the last one */
+/**
+ * @brief Shift up all elements of a stack by 1. 
+ * The first element becomes the last one.
+ * @param stack the stack used to rotate
+*/
 static void	rotate(t_node **stack)
 {
 	t_node	*temp;

@@ -6,17 +6,21 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/20 14:31:54 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/11 15:20:57 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/17 15:51:42 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Take first element at top of first stack, put it at top of receiving stack.
-Do nothing if other stack is empty. */
+
+/**
+ * @brief Take first element at top of first stack, put it at top of receiving stack. Do nothing if other stack is empty.
+ * @param stack_send the stack to send to
+ * @param stack_receive stack to receive
+*/
 void	push(t_node **stack_send, t_node **stack_receive)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (!stack_send || !(*stack_send)) //check if stack_send is empty or not init
 		return ;

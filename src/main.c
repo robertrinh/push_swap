@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 14:06:33 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/17 15:57:52 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,37 @@ void	leak_check(void)
 	system("leaks push_swap");
 }
 
-void print_stack(t_node *stack) {
-    t_node *current = stack;
-    while (current != NULL) {
-        printf("Position: %d, Value: %d\n", current->position, current->value);
-        current = current->next;
-    }
-} //delete
+void	print_stack(t_node *stack)
+{
+	t_node	*current;
 
-void new_print(t_node *stack) {
-    t_node *current = stack;
-    while (current != NULL) {
-        printf("Position: %d, Value: %d AFTER SORT\n", current->position, current->value);
-        current = current->next;
-    }
+	current = stack;
+	while (current != NULL)
+	{
+		printf("Position: %d, Value: %d\n", current->position, current->value);
+		current = current->next;
+	}
 } //delete
-
+void	new_print(t_node *stack)
+{
+	t_node	*current;
+	
+	current = stack;
+	while (current != NULL)
+	{
+		printf("Position: %d, Value: %d AFTER SORT\n", current->position,
+				current->value);
+		current = current->next;
+	}
+} //delete
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-
+	
+	atexit(&leak_check); //delete afterwards
 	if (argc == 1)
 		return (0);
-	// atexit(&leak_check); //delete afterwards
 	input_check(argc, argv);
 	stack_a = stacka_init(argc, argv);
 	stack_b = NULL;
@@ -49,5 +56,5 @@ int	main(int argc, char **argv)
 	// new_print(stack_a); //delete afterwards
 	free_node(&stack_a);
 	free_node(&stack_b);
-	return (0);	
+	return (0);
 }

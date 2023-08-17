@@ -6,12 +6,13 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/15 15:16:27 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/16 16:26:58 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/17 15:57:43 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* initialises a new node */
 t_node *new_node(int value)
 {
 	t_node	*newnode;

@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/21 14:57:37 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/16 23:14:32 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/17 15:54:38 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,26 +84,27 @@ void	sort_5(t_node **stack_a, t_node **stack_b)
 	sort_4(stack_a, stack_b);
 	pa(stack_b, stack_a);
 }
-
+/**
+ * @brief sorts the numbers in an ascending order through an algorithm.
+ * @param stack_a stack a that is used to sort
+ * @param stack_b stack b that is used to push numbers
+*/
 void	sort(t_node **stack_a, t_node **stack_b)
 {
 	int	len;
 
-	stack_index(&(*stack_a));
+	stack_index(stack_a);
 	len = lst_len(*stack_a);
-	if (!already_sorted(stack_a) && len == 2)
+	if (already_sorted(stack_a))
+		return ;
+	if (len == 2)
 		sort_2(stack_a);
-	else if (!already_sorted(stack_a) && len == 3)
+	else if (len == 3)
 		sort_3(stack_a);
-	else if (!already_sorted(stack_a) && len == 4)
+	else if (len == 4)
 		sort_4(stack_a, stack_b);
-	else if (!already_sorted(stack_a) && len == 5)
+	else if (len == 5)
 		sort_5(stack_a, stack_b);
-	else if (!already_sorted(stack_a))
+	else
 		radix_sort(stack_a, stack_b);
-	// else
-	// {
-	// 	free_node(stack_a);
-	// 	free_node(stack_b);
-	// }
 }
