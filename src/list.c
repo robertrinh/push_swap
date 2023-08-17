@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/15 15:16:27 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/09 15:46:19 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/16 16:26:58 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,7 @@ t_node *lst_last(t_node *lst)
 		lst = lst->next;
 	return (lst);
 }
-/* adds node ''new'' at beginning of the list */
-void	lst_add_front(t_node **lst, t_node *new)
-{
-	new->next = *lst;
-	*lst = new;
-}
 
-/* adds node at the end of the linked list */
-void	lst_add_back(t_node **lst, t_node *new)
-{
-	t_node	*last;
-
-	if (*lst)
-	{
-		last = lst_last(*lst);
-		last->next = new;
-	}
-	else
-		*lst = new;
-}
-
-#include <stdio.h>
 /* adds node at the end of the linked list */
 void	add_lst_at_end(t_node **lst, int value)
 {
@@ -71,7 +50,6 @@ void	add_lst_at_end(t_node **lst, int value)
 	while (current->next)
 		current = current->next;
 	new = new_node(value);
-	// printf("value of current + new is: %d %d \n", current->value, new->value);
 	current->next = new;
 }
 /* counts number of nodes in list */

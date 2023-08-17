@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:19 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/14 22:23:54 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/16 21:37:15 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,25 @@ typedef struct s_node
 	struct s_node *next;
 }	t_node;
 
+/* parsing */
 int	main(int argc, char **argv);
 void	terminator(void);
 void	input_check(int argc, char **argv);
-long	ft_ayetoi(const char *str);
 t_node	*stacka_init(int argc, char **argv);
 void	stack_index(t_node **stack);
+
+/* sort */
 bool	already_sorted(t_node **stack_a);
 void	sort(t_node **stack_a, t_node **stack_b);
-void	free_nodes(t_node **node);
-int	find_biggest_index(t_node **stack_a);
 int	find_lowest_index(t_node **stack_a);
+void	radix_sort(t_node **stack_a, t_node **stack_b);
 
 /* linked list */
 t_node	*new_node(int value);
 t_node	*lst_last(t_node *lst);
-void	lst_add_front(t_node **lst, t_node *new);
-void	lst_add_back(t_node **lst, t_node *new);
 int	lst_len(t_node *lst);
 void	add_lst_at_end(t_node **lst, int value);
+void	free_node(t_node **node);
 
 /* actions */
 void	pa(t_node **stack_b, t_node **stack_a);

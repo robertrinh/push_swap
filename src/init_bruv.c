@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/22 17:36:59 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/14 16:05:48 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/16 23:09:14 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,32 +33,6 @@ void	stack_index(t_node **stack)
 	}
 }
 
-
-// void	stack_index(t_node **stack_a)
-// {
-// 	t_node	*current_node;
-// 	t_node	*next_node;
-	
-// 	current_node = *stack_a;
-// 	while (current_node)
-// 	{
-// 		next_node = *stack_a;
-// 		current_node->position = 0;
-// 		while (next_node)
-// 		{
-// 			if (current_node->value > next_node->value)
-// 				next_node->position++;
-// 			next_node = next_node->next;
-// 		}
-// 		current_node =  current_node->next;
-// 		next_node = *stack_a;
-// 	}
-// }
-		//deze checken nog. does index really hold true?
-		// if (current_node->value > value)
-		// 	current_node->position++;
-		// current_node = current_node->next;
-
 t_node	*stacka_init(int argc, char **argv)
 {
 	t_node	*stack_a;
@@ -77,14 +51,9 @@ t_node	*stacka_init(int argc, char **argv)
 	while (temp[i])
 	{
 		add_lst_at_end(&stack_a, ft_ayetoi(temp[i]));
-		//initialise node + assign node at back
-		// printf("nodes made are %d node(s) \n", lst_len(stack_a));
 		i++;
 	}
-	//free afterwards? cuz split
+	if (argc == 2)
+		ft_free_2d(temp);
 	return (stack_a);
 }
-
-//initialise node through new_node
-//assign new node / assign to last node
-//free

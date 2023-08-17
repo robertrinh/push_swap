@@ -6,14 +6,14 @@
 #    By: qtrinh <qtrinh@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/06/14 16:16:14 by qtrinh        #+#    #+#                  #
-#    Updated: 2023/08/11 16:08:02 by robertrinh    ########   odam.nl          #
+#    Updated: 2023/08/17 14:02:05 by robertrinh    ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
 
 CC := gcc
-CFLAGS := -Wall -Werror -Wextra -g #gflag for debug
+CFLAGS := -Wall -Werror -Wextra -g -fsanitize=address #gflag for debug
 HEADER := include/push_swap.h
 INCLUDE := -I include
 OBJDIR = objects
@@ -23,6 +23,7 @@ SRC := init_bruv.c \
 		main.c \
 		parsing.c \
 		push.c \
+		radix_sort.c \
 		reverse_rotate.c \
 		rotate.c \
 		sort.c \
