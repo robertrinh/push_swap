@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 15:18:25 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 16:10:46 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/18 13:42:56 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,11 @@ void	input_check(int argc, char **argv)
 
 	i = 0;
 	if (argc == 2)
+	{
 		temp_array = ft_split(argv[1], ' ');
+		if (!temp_array)
+			exit(EXIT_FAILURE);
+	}
 	else
 		temp_array = argv + 1;
 	while (temp_array[i])
