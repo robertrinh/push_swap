@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/22 17:36:59 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/18 13:56:34 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/18 14:35:55 by qtrinh        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_node	*stacka_init(int argc, char **argv)
 	if (argc == 2)
 	{
 		temp = ft_split(argv[1], ' ');
-		if (!temp_array)
+		if (!temp)
 			exit(EXIT_FAILURE);
 	}
 	else
