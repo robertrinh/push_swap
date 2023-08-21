@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 16:07:07 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 16:18:24 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/21 16:49:11 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,32 @@ bool	already_sorted(t_node **stack_a)
 	}
 	return (true);
 }
+int	get_position(t_node **stack_a)
+{
+	int	i;
+	int	lowest;
+	t_node	*temp;
+
+	i = 0;
+	temp = *stack_a;
+	while (temp)
+	{
+		lowest = find_lowest_index(stack_a);
+		if (temp->position == lowest)
+			break ;
+		temp = temp->next;
+		i++;
+	}
+	return (i);
+}
 
 int	find_lowest_index(t_node **stack_a)
 {
 	int		lowest_index;
 	t_node	*node;
 
-	lowest_index = 0;
 	node = *stack_a;
+	lowest_index = node->position; //DIT IS HET!!!
 	while (node)
 	{
 		if (node->position < lowest_index)

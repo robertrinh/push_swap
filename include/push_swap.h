@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:19 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 16:00:35 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/21 16:22:38 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ int					main(int argc, char **argv);
 void				terminator(void);
 void				input_check(int argc, char **argv);
 t_node				*stacka_init(int argc, char **argv);
-void				stack_index(t_node **stack);
+void				stack_index(t_node *stack);
 
 /* sort */
 bool				already_sorted(t_node **stack_a);
 void				sort(t_node **stack_a, t_node **stack_b);
 int					find_lowest_index(t_node **stack_a);
+int					get_position(t_node **stack_a);
 void				radix_sort(t_node **stack_a, t_node **stack_b);
 
 /* linked list */

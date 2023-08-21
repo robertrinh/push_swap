@@ -6,19 +6,19 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/22 17:36:59 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/18 14:35:55 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/21 16:14:37 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_index(t_node **stack)
+void	stack_index(t_node *stack)
 {
 	t_node	*current;
 	t_node	*temp;
 
-	current = *stack;
-	temp = *stack;
+	current = stack;
+	temp = stack;
 	while (current)
 	{
 		while (temp)
@@ -27,10 +27,12 @@ void	stack_index(t_node **stack)
 				temp->position++;
 			temp = temp->next;
 		}
-		temp = *stack;
+		temp = stack;
 		current = current->next;
 	}
 }
+
+
 
 t_node	*stacka_init(int argc, char **argv)
 {

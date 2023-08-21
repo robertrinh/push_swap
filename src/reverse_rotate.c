@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/20 16:48:38 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 17:02:43 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/21 17:27:01 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,40 @@
  * The last element becomes the first one.
  * @param stack the stack used to reverse rotate.
 */
+// static void	reverse_rotate(t_node **stack)
+// {
+// 	t_node	*current;
+// 	t_node	*tail;
+	
+// 	if (!*stack || !(*stack)->next)
+// 		return ;
+// 	tail = *stack; //first element of stack
+// 	current = (*stack)->next; //second element of stack
+// 	while (current->next) 
+// 	{
+// 		tail = current; //in loop, tail updates to current
+// 		current = current->next; //checks the last node
+// 	}
+// 	current->next = *stack; //set pointer next to current value of stack
+// 	*stack = current; //assigns stack to last node
+// 	tail->next = NULL; //assigns new tail
+// }
 static void	reverse_rotate(t_node **stack)
 {
-	t_node	*current;
-	t_node	*tail;
-	
-	if (!*stack || !(*stack)->next)
+	t_node	*prev_tail;
+	t_node	*new_tail;
+
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	tail = *stack; //first element of stack
-	current = (*stack)->next; //second element of stack
-	while (current->next) 
+	prev_tail = *stack;
+	while (prev_tail->next != NULL)
 	{
-		tail = current; //in loop, tail updates to current
-		current = current->next; //checks the last node
+		new_tail = prev_tail;
+		prev_tail = prev_tail->next;
 	}
-	current->next = *stack; //set pointer next to current value of stack
-	*stack = current; //assigns stack to last node
-	tail->next = NULL; //assigns new tail
+	prev_tail->next = *stack;
+	new_tail->next = NULL;
+	*stack = prev_tail;
 }
 
 /* Shift down all elements of stack a by 1.

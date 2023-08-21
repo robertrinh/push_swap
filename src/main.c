@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/17 17:09:20 by qtrinh        ########   odam.nl         */
+/*   Updated: 2023/08/21 18:02:52 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,33 @@ int	main(int argc, char **argv)
 	stack_a = stacka_init(argc, argv);
 	stack_b = NULL;
 	sort(&stack_a, &stack_b);
+	// new_print(stack_a);
 	free_node(&stack_a);
 	free_node(&stack_b);
-	new_print(stack_a);
 	// atexit(&leak_check);
 	return (0);
 }
+// void	sort_five(t_stack **a, t_stack **b)
+// {
+// 	int	i;
+// 	int	min_index;
+// 	i = 0;
+// 	while (i < 2)
+// 	{
+// 		min_index = find_min_index(*a);
+// 		while ((*a)->index != min_index)
+// 			rotate(a, "ra");
+// 		push(a, b, "pb");
+// 		i++;
+// 	}
+// 	sort_three(a);
+// 	i = 0;
+// 	while (i < 2)
+// 	{
+// 		push(b, a, "pa");
+// 		i++;
+// 	}
+// 	min_index = find_min_index(*a);
+// 	while ((*a)->index != min_index)
+// 		rotate(a, "ra");
+// }
