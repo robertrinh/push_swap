@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/21 14:57:37 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/21 18:13:18 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/24 14:28:22 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sort_4(t_node **stack_a, t_node **stack_b)
 {
 	int	position;
 	
-	position = get_position(stack_a);
+	position = get_position_from_lowest(stack_a);
 	if (position == 1)
 		sa(stack_a);
 	else if (position == 2)
@@ -69,7 +69,7 @@ void	sort_5(t_node **stack_a, t_node **stack_b)
 {
 	int	position;
 
-	position = get_position(stack_a);
+	position = get_position_from_lowest(stack_a);
 	if (position == 1)
 		sa(stack_a);
 	else if (position == 2)

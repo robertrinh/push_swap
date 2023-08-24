@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/16 16:07:07 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/21 16:49:11 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/24 14:28:01 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ bool	already_sorted(t_node **stack_a)
 	}
 	return (true);
 }
-int	get_position(t_node **stack_a)
+/**
+ * @brief gets position which is x nodes away from lowest index
+ * @param stack stack used
+*/
+int	get_position_from_lowest(t_node **stack_a)
 {
 	int	i;
 	int	lowest;

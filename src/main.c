@@ -6,7 +6,7 @@
 /*   By: qtrinh <qtrinh@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/14 16:16:16 by qtrinh        #+#    #+#                 */
-/*   Updated: 2023/08/21 18:14:43 by robertrinh    ########   odam.nl         */
+/*   Updated: 2023/08/23 16:16:16 by robertrinh    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 	stack_a = stacka_init(argc, argv);
 	stack_b = NULL;
 	sort(&stack_a, &stack_b);
-	// new_print(stack_a);
+	new_print(stack_a);
 	free_node(&stack_a);
 	free_node(&stack_b);
 	// atexit(&leak_check);
